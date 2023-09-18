@@ -13,8 +13,11 @@ FILES:${PN} += " \
 "
 
 do_install:append() {
+    bbnote "Network Installation Started"
     install -d ${D}${sysconfdir}/systemd/network
     install -m 0644 ${WORKDIR}/eth.network ${D}${sysconfdir}/systemd/network
     install -m 0644 ${WORKDIR}/en.network ${D}${sysconfdir}/systemd/network
     install -m 0644 ${WORKDIR}/wlan.network ${D}${sysconfdir}/systemd/network
+    bbnote "Network Installation Started"
+
 }
