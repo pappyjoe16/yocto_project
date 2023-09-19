@@ -1,0 +1,12 @@
+[Unit]
+Description=Run script at startup after all systemd services are loaded
+After=default.target
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=/etc/init.d/install_gpio_packages.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
